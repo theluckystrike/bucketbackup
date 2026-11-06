@@ -1,0 +1,3 @@
+objects in bucket folder: ['2026-11-06T13-44-55Z.zip']
+2026-11-06T13-44-55Z.zip: 54 entries, 12 region files, level.dat: ['world/level.dat', 'world_nether/level.dat', 'world_the_end/level.dat'], session.lock present: False, server.properties: True, size 523726 bytes
+ZIP CHECK OK

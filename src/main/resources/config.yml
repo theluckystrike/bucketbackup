@@ -1,0 +1,58 @@
+# BucketBackup config. After you edit this file, run /bucketbackup reload, then /bucketbackup test.
+
+storage:
+  # S3 endpoint of your provider (no bucket name in it):
+  #   Cloudflare R2:  https://<account-id>.r2.cloudflarestorage.com      region: auto
+  #   AWS S3:         https://s3.<region>.amazonaws.com                   region: e.g. eu-central-1
+  #   Backblaze B2:   https://s3.<region>.backblazeb2.com                 region: e.g. us-west-004
+  #   Wasabi:         https://s3.<region>.wasabisys.com                   region: e.g. eu-central-1
+  #   MinIO:          http://127.0.0.1:9000                               region: us-east-1
+  endpoint: ''
+  region: auto
+  bucket: ''
+  # Use a key that can only read and write this one bucket.
+  # You can leave these empty and set the env variables BUCKETBACKUP_ACCESS_KEY and BUCKETBACKUP_SECRET_KEY.
+  access-key: ''
+  secret-key: ''
+  # auto = path style for every provider except amazonaws.com. Set true or false to force it.
+  path-style: auto
+
+backup:
+  # Minutes between backups. 0 turns the schedule off (then use /bucketbackup now).
+  interval-minutes: 360
+  # Also run one backup 1 minute after the server starts.
+  on-startup: false
+  # Worlds to back up. '*' means every loaded world.
+  worlds:
+    - '*'
+  # More files or folders to add, relative to the server folder. Files that do not exist are skipped.
+  # Do not add plugins/BucketBackup/config.yml: it holds your secret key.
+  extra-paths:
+    - server.properties
+    - whitelist.json
+    - ops.json
+  # Glob patterns (relative to the server folder) to leave out. session.lock is always left out.
+  exclude:
+    - '**/*.tmp'
+  # 0 = store only (fast, big), 9 = smallest (slow). 6 is a good default.
+  compression-level: 6
+  # Folder in the bucket. Retention only deletes backups this plugin made in this folder.
+  prefix: minecraft/my-server
+  # Keep this many zips on the server disk too (in plugins/BucketBackup/work/local). 0 = upload only.
+  keep-local-copies: 0
+
+retention:
+  # Keep the newest N backups in the bucket. Older ones are deleted after each upload.
+  keep-last: 14
+  # Also delete backups older than this many days. 0 = off. The newest backup is always kept.
+  max-age-days: 0
+
+upload:
+  # Size of each upload part. Files above this size use a multipart upload. 5 to 512.
+  part-size-mb: 16
+
+notify:
+  # Optional Discord webhook URL for backup messages.
+  discord-webhook: ''
+  # failure, always or never
+  when: failure

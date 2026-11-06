@@ -1,0 +1,7 @@
+build/
+.gradle/
+run/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+s3data/
+s3data.log

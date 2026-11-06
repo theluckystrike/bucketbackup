@@ -1,0 +1,17 @@
+name: BucketBackup
+version: '${version}'
+main: one.zovo.bucketbackup.BucketBackupPlugin
+api-version: '1.21'
+description: Scheduled world backups to S3, Cloudflare R2, Backblaze B2, Wasabi or MinIO.
+website: https://modrinth.com/plugin/bucketbackup
+authors: [Zovo]
+commands:
+  bucketbackup:
+    description: Run, list and test backups.
+    usage: /bucketbackup <now|status|list|test|reload>
+    aliases: [bbackup]
+    permission: bucketbackup.admin
+permissions:
+  bucketbackup.admin:
+    description: Use all BucketBackup commands.
+    default: op

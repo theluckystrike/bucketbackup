@@ -1,0 +1,3 @@
+objects in bucket folder: ['2026-11-06T13-41-20Z.zip']
+2026-11-06T13-41-20Z.zip: 81 entries, 12 region files, level.dat: ['world/level.dat'], session.lock present: False, server.properties: True, size 520037 bytes
+ZIP CHECK OK

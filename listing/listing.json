@@ -1,0 +1,30 @@
+{
+  "slug": "bucketbackup",
+  "title": "BucketBackup",
+  "summary": "Scheduled world backups to Cloudflare R2, AWS S3, Backblaze B2, Wasabi or MinIO. Multipart uploads, safe retention, Paper 26.x ready.",
+  "project_type": "plugin",
+  "categories": ["utility", "management"],
+  "additional_categories": [],
+  "client_side": "unsupported",
+  "server_side": "required",
+  "license_id": "MIT",
+  "source_url": "https://github.com/theluckystrike/bucketbackup",
+  "issues_url": "https://github.com/theluckystrike/bucketbackup/issues",
+  "wiki_url": "https://github.com/theluckystrike/bucketbackup#readme",
+  "donation_urls": [{"id": "github", "platform": "GitHub Sponsors", "url": "https://github.com/sponsors/theluckystrike"}],
+  "version": {
+    "version_number": "1.0.0",
+    "name": "BucketBackup 1.0.0",
+    "version_type": "release",
+    "loaders": ["paper", "purpur"],
+    "game_versions": ["1.21", "1.21.1", "1.21.2", "1.21.3", "1.21.4", "1.21.5", "1.21.6", "1.21.7", "1.21.8", "1.21.9", "1.21.10", "1.21.11", "26.1", "26.1.1", "26.1.2", "26.2", "26.3"],
+    "featured": true,
+    "changelog_file": "CHANGELOG.md",
+    "file": "build/libs/BucketBackup-1.0.0.jar"
+  },
+  "gallery": [
+    {"file": "listing/gallery/screenshot-paper-26.3.png", "title": "Paper 26.3 real run", "description": "Status, test, backup, retention and the scheduled backup on a headless Paper 26.3 server.", "featured": true},
+    {"file": "listing/gallery/screenshot-paper-1.21.11.png", "title": "Paper 1.21.11 real run", "description": "The same jar on Paper 1.21.11 with three worlds, and the zip check.", "featured": false}
+  ],
+  "icon": "listing/icon.png"
+}
