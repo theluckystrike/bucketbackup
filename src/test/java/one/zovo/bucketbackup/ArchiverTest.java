@@ -53,6 +53,19 @@ class ArchiverTest {
     }
 
     @Test
+    void neverIncludesOwnSecretsOrOwnZips() throws IOException {
+        Path own = Files.createDirectories(dir.resolve("plugins/BucketBackup/work/local"));
+        Files.writeString(own.resolve("old.zip"), "zip");
+        Files.writeString(dir.resolve("plugins/BucketBackup/config.yml"), "secret-key: x");
+        Files.createDirectories(dir.resolve("plugins/Other"));
+        Files.writeString(dir.resolve("plugins/Other/config.yml"), "a: 1");
+        Archiver.zip(dir, List.of("plugins"), List.of(), 1, dir.resolve("o.zip"));
+        Map<String, byte[]> m = read(dir.resolve("o.zip"));
+        assertTrue(m.containsKey("plugins/Other/config.yml"));
+        assertTrue(m.keySet().stream().noneMatch(k -> k.startsWith("plugins/BucketBackup/") && !k.equals("plugins/BucketBackup/")), m.keySet().toString());
+    }
+
+    @Test
     void refusesPathsOutsideServer() throws IOException {
         Path out = dir.resolve("o.zip");
         Archiver.Result r = Archiver.zip(dir, List.of("../etc"), List.of(), 1, out);

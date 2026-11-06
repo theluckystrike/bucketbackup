@@ -22,8 +22,12 @@ import java.util.zip.ZipOutputStream;
 public final class Archiver {
     public record Result(Path zip, int files, long bytesIn, long bytesOut, String sha256, List<String> skipped) { }
 
-    /** Files that are never useful in a backup and are locked while the server runs. */
-    static final List<String> ALWAYS_EXCLUDE = List.of("**/session.lock", "session.lock");
+    /**
+     * Never in a backup: lock files, this plugin's own temporary and local zips (a backup must not contain
+     * older backups), and this plugin's config.yml, which can hold the secret key.
+     */
+    static final List<String> ALWAYS_EXCLUDE = List.of("**/session.lock", "session.lock",
+            "plugins/BucketBackup/work", "plugins/BucketBackup/work/**", "plugins/BucketBackup/config.yml");
 
     private Archiver() { }
 

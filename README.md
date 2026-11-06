@@ -84,7 +84,7 @@ Paper may log "A manual (plugin-induced) save has been detected" once. That is P
 
 ## How it was tested
 
-- 23 unit and integration tests (`gradle test`). The SigV4 signer is checked against the three signature examples in the AWS S3 docs.
+- 24 unit and integration tests (`gradle test`). The SigV4 signer is checked against the three signature examples in the AWS S3 docs.
 - `scripts/test-s3.sh` runs the integration tests against `rclone serve s3`, a real S3 server that rejects bad signatures: a 12 MB multipart upload is read back byte for byte, retention runs over three backups, and a wrong secret gets HTTP 403.
 - `scripts/real-run.sh` downloads the official Paper jar, checks its SHA-256, starts a headless server with the plugin, runs every command, waits for the scheduled backup, stops the server and checks the zip in the bucket (CRC, `level.dat`, region files, no `session.lock`).
 

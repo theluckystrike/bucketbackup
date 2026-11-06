@@ -29,11 +29,11 @@ public final class BucketBackupPlugin extends JavaPlugin implements TabCompleter
     private final Map<World, Boolean> pausedAutoSave = new HashMap<>();
     private Settings settings;
     private BukkitTask timer;
-    private Instant nextRun;
-    private Instant lastSuccess;
+    private volatile Instant nextRun;
+    private volatile Instant lastSuccess;
     private Instant lastStamp;
-    private String lastSummary = "none yet";
-    private String lastError = "none";
+    private volatile String lastSummary = "none yet";
+    private volatile String lastError = "none";
 
     @Override
     public void onEnable() {
