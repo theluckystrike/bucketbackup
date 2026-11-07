@@ -96,13 +96,21 @@ scripts/test-s3.sh    # tests plus the S3 integration test (needs rclone)
 scripts/real-run.sh   # real Paper run (needs JDK 25 and rclone)
 ```
 
-## Support the project
+[zovo-support-start]: #
 
-BucketBackup is free, and every feature in it stays free. If it saved your world, you can support the work on [GitHub Sponsors](https://github.com/sponsors/theluckystrike). Bug reports and feature requests go to the issue tracker.
+## Support Zovo
 
-## More from Zovo
+Zovo builds and maintains BucketBackup, and every feature stays free. If it saves you time, you can support the work on [GitHub Sponsors](https://github.com/sponsors/theluckystrike). Sponsorship is optional, and the tool works the same without it.
 
-If you also work with server data in VS Code, [CSV Viewer, Excel Viewer & Parquet Viewer](https://marketplace.visualstudio.com/items?itemName=zovo.table-viewer-vscode) opens exported stats and logs as a sortable table.
+Bug reports and ideas go to the issue tracker of this repository.
+
+Zovo is made by [theluckystrike](https://github.com/theluckystrike) on GitHub.
+
+## More tools by Zovo
+
+- [Async Locator 26](https://github.com/theluckystrike/async-locator-26). Runs /locate, explorer maps and other structure searches off the server thread, for Fabric 26.3 and 1.21.11.
+
+[zovo-support-end]: #
 
 ## License
 

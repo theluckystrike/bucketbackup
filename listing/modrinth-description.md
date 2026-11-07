@@ -35,6 +35,19 @@ The full guide, with Cloudflare R2 steps and restore steps, is in the README on 
 
 Tested with the same jar on Paper 26.3 and Paper 1.21.11 against a real S3 server that checks request signatures. Folia is not supported yet.
 
-## Support
+[zovo-support-start]: #
 
-BucketBackup is free, and every feature stays free. If it saved your world, you can support the work on GitHub Sponsors (link on the right). Bug reports and ideas go to the issue tracker.
+## Support Zovo
+
+Zovo builds and maintains BucketBackup, and every feature stays free. If it saves you time, you can support the work on [GitHub Sponsors](https://github.com/sponsors/theluckystrike). Sponsorship is optional, and the tool works the same without it.
+
+Bug reports and ideas go to the issue tracker linked on this page.
+
+Zovo is made by [theluckystrike](https://github.com/theluckystrike) on GitHub.
+
+## More tools by Zovo
+
+- [Async Locator 26](https://github.com/theluckystrike/async-locator-26). Runs /locate, explorer maps and other structure searches off the server thread, for Fabric 26.3 and 1.21.11.
+- [All Zovo tools on GitHub](https://github.com/theluckystrike?tab=repositories). Free developer tools, including VS Code extensions and Apify Actors.
+
+[zovo-support-end]: #
